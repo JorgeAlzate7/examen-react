@@ -1,21 +1,11 @@
-.mi-navbar {
-    background-color: #39A900;
+body {
+    margin: 0;
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
 }
 
-.mi-footer {
-    background-color: #39A900;
-}
-
-.mi-boton {
-    background-color: #39A900;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    display: inline-block;
-}
-
-.mi-boton:hover {
-    background-color: #2d8500;
-    color: white;
+h1,
+h2,
+h3 {
+    color: #222;
 }

@@ -9,7 +9,7 @@ use App\Http\Controllers\TrainingCenterController;
 use App\Http\Controllers\AprendiceController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\CourseController;
-use App\Http\Controllers\VisionController;
+use App\Http\Controllers\conocenosController;
 use App\Http\Controllers\MisionController;
 use App\Http\Controllers\ContactoController;
 
@@ -93,11 +93,9 @@ Route::put('teacher/{teacher}', [TeacherController::class, 'update'])->name('tea
 Route::delete('teacher/{teacher}', [TeacherController::class, 'destroy'])->name('teacher.destroy');
 
 
-// VISIÓN
-Route::get('/vision', [VisionController::class, 'index'])->name('vision.index');
+// CONOCENOS
+Route::get('/conocenos', [ConocenosController::class, 'index'])->name('conocenos.index');
 
-// MISIÓN
-Route::get('/mision', [MisionController::class, 'index'])->name('mision.index');
 
 // CONTACTO
 Route::get('/contacto', [ContactoController::class, 'index'])->name('contacto.index');

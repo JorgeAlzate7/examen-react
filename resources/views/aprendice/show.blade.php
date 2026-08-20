@@ -1,7 +1,22 @@
 @extends('layouts.app')
 
+@section('css')
+
+<link
+    rel="stylesheet"
+    href="{{ asset('css/pages/aprendice.css') }}"
+>
+
+@endsection
+
 @section('content')
-<div class="container mt-4" style="max-width: 600px;">
+
+<link
+    rel="stylesheet"
+    href="{{ asset('css/pages/aprendice.css') }}"
+>
+
+<div class="container aprendice-page">
     <div class="card shadow-sm">
         <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
             <h5 class="mb-0">Detalle del Aprendiz #{{ $aprendiz->id }}</h5>
@@ -31,12 +46,12 @@
 
             <div class="mb-3">
                 <label class="form-label text-muted fw-bold">Curso del Aprendiz:</label>
-                <p class="fs-5">{{ $aprendiz->course_id }}</p>
+                <p class="fs-5">{{ $aprendiz-> course-> course_number ?? 'sin curso' }} - {{ $aprendiz->course->day ?? '' }}</p>
             </div>
 
             <div class="mb-3">
                 <label class="form-label text-muted fw-bold">Computador del Aprendiz:</label>
-                <p class="fs-5">{{ $aprendiz->computer_id }}</p>
+                <p class="fs-5">{{ $aprendiz->computer->brand ?? 'sin computador'}}</p>
             </div>
         </div>
 

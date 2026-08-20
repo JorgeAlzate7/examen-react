@@ -36,9 +36,9 @@
 
                         <td>{{ $course->day }}</td>
 
-                        <td>{{ $course->area_id }}</td>
+                        <td>{{ $course->area->name }}</td>
 
-                        <td>{{ $course->training_center_id }}</td>
+                        <td>{{ $course->training_center -> name ?? '' }}</td>
 
                         <td>
 

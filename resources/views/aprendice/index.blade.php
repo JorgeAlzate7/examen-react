@@ -1,65 +1,170 @@
 @extends('layouts.app')
 
-@section('content')
-    <div class="container">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-            <h1>APRENDICES</h1>
+@section('css')
 
-            <a href="{{ route('aprendice.create') }}" class="btn btn-success">
-                <i class="bi bi-plus-circle"></i> Nuevo estudiante
-            </a>
+<link
+    rel="stylesheet"
+    href="{{ asset('css/pages/aprendice.css') }}"
+>
+
+@endsection
+
+
+@section('content')
+
+<div class="container aprendice-page">
+
+    <!-- ENCABEZADO -->
+
+    <div class="aprendice-header">
+
+        <div>
+
+            <h1>Aprendices</h1>
+
+            <p>
+                Administración de aprendices registrados en el sistema.
+            </p>
+
         </div>
 
-        <table id="idProduct" class="table table-striped table-bordered" style="width:100%">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Email</th>
-                    <th>Número celular</th>
-                    <th>Curso</th>
-                    <th>Computador</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
 
-            <tbody>
-                @foreach ($aprendices as $aprendice)
+        <a
+            href="{{ route('aprendice.create') }}"
+            class="aprendice-btn-primary"
+        >
+
+            <i class="bi bi-plus-circle"></i>
+
+            Nuevo estudiante
+
+        </a>
+
+    </div>
+
+
+    <!-- TABLA -->
+
+    <div class="aprendice-card">
+
+        <div class="table-responsive">
+
+            <table
+                id="idProduct"
+                class="table aprendice-table"
+            >
+
+                <thead>
+
                     <tr>
-                        <td>{{ $aprendice->name }}</td>
-                        <td>{{ $aprendice->email }}</td>
-                        <td>{{ $aprendice->cell_number }}</td>
-                        <td>{{ $aprendice->course_id }}</td>
-                        <td>{{ $aprendice->computer_id }}</td>
+
+                        <th>Nombre</th>
+
+                        <th>Email</th>
+
+                        <th>Número celular</th>
+
+                        
+
+                        <th></th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    @foreach ($aprendices as $aprendice)
+
+                    <tr>
 
                         <td>
-                            <a href="{{ route('aprendice.show', $aprendice->id) }}"
-                               class="btn btn-info btn-sm">
-                                Mostrar
-                            </a>
-
-                            <a href="{{ route('aprendice.edit', $aprendice->id) }}"
-                               class="btn btn-warning btn-sm">
-                                Editar
-                            </a>
-
-                            <form action="{{ route('aprendice.destroy', $aprendice->id) }}"
-                                  method="POST"
-                                  style="display:inline;">
-
-                                @csrf
-                                @method('DELETE')
-
-                                <button type="submit"
-                                        class="btn btn-danger btn-sm"
-                                        onclick="return confirm('¿Está seguro de eliminar este aprendiz?')">
-                                    Eliminar
-                                </button>
-
-                            </form>
+                            {{ $aprendice->name }}
                         </td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
+
+
+                        <td>
+                            {{ $aprendice->email }}
+                        </td>
+
+
+                        <td>
+                            {{ $aprendice->cell_number }}
+                        </td>
+
+
+
+
+                       <td>
+
+    <div class="aprendice-actions">
+
+        <!-- MOSTRAR -->
+
+        <a
+            href="{{ route('aprendice.show', $aprendice->id) }}"
+            class="aprendice-btn btn-mostrar"
+        >
+
+            <i class="bi bi-eye"></i>
+            Mostrar
+
+        </a>
+
+
+        <!-- EDITAR -->
+
+        <a
+            href="{{ route('aprendice.edit', $aprendice->id) }}"
+            class="aprendice-btn btn-editar"
+        >
+
+            <i class="bi bi-pencil"></i>
+            Editar
+
+        </a>
+
+
+        <!-- ELIMINAR -->
+
+        <form
+            action="{{ route('aprendice.destroy', $aprendice->id) }}"
+            method="POST"
+        >
+
+            @csrf
+            @method('DELETE')
+
+            <button
+                type="submit"
+                class="aprendice-btn btn-eliminar"
+                onclick="return confirm('¿Está seguro de eliminar este aprendiz?')"
+            >
+
+                <i class="bi bi-trash"></i>
+                Eliminar
+
+            </button>
+
+        </form>
+
     </div>
+
+</td>
+
+                    </tr>
+
+                    @endforeach
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
 @endsection

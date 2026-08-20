@@ -7,7 +7,7 @@
     <div class="text-center mb-5">
 
         <h1 class="display-4 fw-bold">
-            Bienvenido a AdminSena222
+            Bienvenido a AdminSena
         </h1>
 
         <p class="lead">
@@ -28,7 +28,9 @@
 
                 <div class="card-body text-center">
 
-                    <i class="bi bi-backpack"></i>
+                    <h2>Aprendices</h2>
+
+                    
 
                     <p>
                         Gestiona los aprendices registrados.
@@ -54,7 +56,7 @@
                 <div class="card-body text-center">
 
                     <h3>
-                        🏢 Áreas
+                         Áreas
                     </h3>
 
                     <p>
@@ -80,9 +82,9 @@
 
                 <div class="card-body text-center">
 
-                    <h3>
-                        💻 Computadores
-                    </h3>
+                    <h2>
+                         Computadores
+                    </h2>
 
                     <p>
                         Gestiona los computadores.
@@ -107,9 +109,9 @@
 
                 <div class="card-body text-center">
 
-                    <h3>
+                    <h2>
                          Cursos
-                    </h3>
+                    </h2>
 
                     <p>
                         Administra los cursos.
@@ -134,9 +136,9 @@
 
                 <div class="card-body text-center">
 
-                    <h3>
-                        👨‍🏫 Profesores
-                    </h3>
+                    <h2>
+                        Instructores
+                    </h2>
 
                     <p>
                         Gestiona los profesores.
@@ -161,9 +163,9 @@
 
                 <div class="card-body text-center">
 
-                    <h3>
-                        🏫 Centros de formación
-                    </h3>
+                    <h2>
+                         Centros de formación
+                    </h2>
 
                     <p>
                         Gestiona los centros de formación.

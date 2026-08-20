@@ -1,66 +1,190 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-success shadow">
-    <div class="container-fluid">
+<nav class="navbar navbar-expand-lg">
 
-        <!-- Logo y nombre -->
-        <a class="navbar-brand d-flex align-items-center" href="#">
+    <div class="container">
 
-    <div>
-        <strong>Admin</strong><br>
-        <small class="text-light">Sistema de Gestión</small>
-    </div>
-</a>
+        <!-- LOGO -->
+        <a class="navbar-brand" href="{{ route('home') }}">
 
-        <button class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation">
+            <img
+                src="{{ asset('image/logo-del-sena-01.png') }}"
+                alt="Logo SENA"
+                class="logo-sena"
+            >
+
+            <span>SENA</span>
+
+        </a>
+
+
+        <!-- BOTÓN CELULAR -->
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Abrir menú"
+        >
 
             <span class="navbar-toggler-icon"></span>
 
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <!-- MENÚ -->
+        <div
+            class="collapse navbar-collapse"
+            id="navbarSupportedContent"
+        >
+
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+
+
+                <!-- INICIO -->
 
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Inicio</a>
+
+                    <a
+                        class="nav-link"
+                        href="{{ route('home') }}"
+                    >
+                        Inicio
+                    </a>
+
                 </li>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button"
-                        data-bs-toggle="dropdown">
 
+                <!-- QUIENES SOMOS -->
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="{{ route('conocenos.index') }}"
+                    >
+                        ¿Quiénes somos?
+                    </a>
+
+                </li>
+
+
+                <!-- CONTACTO -->
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="{{ route('contacto.index') }}"
+                    >
+                        Contacto
+                    </a>
+
+                </li>
+
+
+                <!-- GESTIÓN -->
+
+                <li class="nav-item dropdown">
+
+                    <a
+                        class="nav-link dropdown-toggle"
+                        href="#"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                    >
                         Gestión
                     </a>
 
+
                     <ul class="dropdown-menu">
 
-                        <li><a class="dropdown-item" href="#"> Instructores</a></li>
 
-                        <li><a class="dropdown-item" href="#"> Aprendices</a></li>
+                        <li>
+                            <a
+                                class="dropdown-item"
+                                href="{{ route('aprendice.index') }}"
+                            >
+                                Aprendices
+                            </a>
+                        </li>
 
-                        <li><a class="dropdown-item" href="#"> Cursos</a></li>
 
-                        <li><a class="dropdown-item" href="#"> Centros de Formación</a></li>
+                        <li>
+                            <a
+                                class="dropdown-item"
+                                href="{{ route('course.index') }}"
+                            >
+                                Cursos
+                            </a>
+                        </li>
 
-                        <li><a class="dropdown-item" href="#">Áreas</a></li>
 
-                        <li><a class="dropdown-item" href="#">Computadores</a></li>
+                        <li>
+                            <a
+                                class="dropdown-item"
+                                href="{{ route('area.index') }}"
+                            >
+                                Áreas
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a
+                                class="dropdown-item"
+                                href="{{ route('computer.index') }}"
+                            >
+                                Computadores
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a
+                                class="dropdown-item"
+                                href="{{ route('teacher.index') }}"
+                            >
+                                Instructores
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a
+                                class="dropdown-item"
+                                href="{{ route('training_center.index') }}"
+                            >
+                                Centros de formación
+                            </a>
+                        </li>
+
 
                     </ul>
 
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Reportes</a>
-                </li>
             </ul>
+
+
+            <!-- BUSCADOR -->
+
+            <div class="search-container">
+
+                <i class="bi bi-search"></i>
+
+                <input
+                    type="search"
+                    placeholder="Buscar"
+                    aria-label="Buscar"
+                >
+
+            </div>
+
 
         </div>
 
     </div>
+
 </nav>
